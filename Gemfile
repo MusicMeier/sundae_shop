@@ -11,3 +11,9 @@ gem "sinatra-activerecord", "~> 2.0"
 gem "rake", "~> 13.0"
 gem "sqlite3", "~> 1.4"
 gem "require_all", "~> 3.0"
+
+gem "rest-client", "~> 2.1"
+
+gem "bundler", "~> 2.1"
+
+gem "json", "~> 2.3"
