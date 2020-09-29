@@ -13,4 +13,7 @@ class Cli < ActiveRecord::Base
 
 
 
+
+
 end
+0
