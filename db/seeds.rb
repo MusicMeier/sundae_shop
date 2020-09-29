@@ -1,0 +1,3 @@
+Purchase.destroy_all
+Customer.destroy_all
+Sundae.destroy_all
