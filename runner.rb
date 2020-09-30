@@ -1,8 +1,7 @@
 require_relative 'config/environment'
 require 'pry'
 
-# Cli.new.start_game
+cli = Cli.new
+cli.start_app
 
 
-binding.pry
-0
