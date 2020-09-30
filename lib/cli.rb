@@ -13,8 +13,6 @@ class Cli
     end
 
 
-
-
     def initialize user=nil
         @user = user
     end
@@ -30,4 +28,3 @@ class Cli
 
 
 end
-0
