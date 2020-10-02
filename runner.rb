@@ -8,5 +8,6 @@ cli.choose_a_sample
 cli.order_ice_cream
 cli.pick_toppings
 cli.checkout_sundae
+cli.create_sundae
 cli.create_purchase
 
