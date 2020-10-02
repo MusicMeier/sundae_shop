@@ -34,9 +34,7 @@ end
 (New for ActiveRecord 6.0)
 
 
-## The following steps are already done for you in this boiler plate repo. 
 ## The steps below are provided to you as a reference only. 
-## You're not expected to memorize this (please don't).
 
 
 1. In root of project, run `bundle init`
@@ -78,3 +76,6 @@ end
 15. Now can put a pry in environment.rb to run <ModelName>.all and see your seeds.
 
 Make sure your models inherit from `ActiveRecord::Base`
+
+## Video link for the CLI Sundae app
+  -"https://youtu.be/fGITGAC0l-k"
