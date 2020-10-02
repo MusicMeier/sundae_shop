@@ -103,11 +103,15 @@ class Cli
         else
             clear
             puts "Our bad! We will remake your sundae!  Please go back to the ice cream counter."
-            order_ice_cream
-            pick_toppings
-            create_sundae
-        end
-        
+            redo_order
+        end    
+    end
+
+    def redo_order
+        order_ice_cream
+        pick_toppings
+        create_sundae
+        checkout_sundae
     end
 
     def create_sundae
