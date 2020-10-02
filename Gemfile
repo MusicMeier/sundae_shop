@@ -17,3 +17,4 @@ gem "rest-client", "~> 2.1"
 gem "bundler", "~> 2.1"
 
 gem "json", "~> 2.3"
+gem "tty-prompt", "~> 0.22.0"
