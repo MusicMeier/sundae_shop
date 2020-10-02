@@ -2,7 +2,6 @@ class Cli
     attr_accessor :user, :prompt
 
     def initialize
-        @user = nil
         @prompt = TTY::Prompt.new(symbols: {marker: "🍦"})
     end
 
@@ -13,7 +12,8 @@ class Cli
     def start_app
         clear
         puts "Hello, welcome to the sundae parlor! May we have a name for the order?"
-            @user = gets.chomp
+            customer = gets.chomp
+            @user = Customer.create(name: customer)
             puts "Thank you!"
         end
     
@@ -33,7 +33,7 @@ class Cli
     end
 
     def choose_a_sample
-        puts "Would you like a sample today, #{@user}? Enter: Y/N"
+        puts "Would you like a sample today, #{@user['name']}? Enter: Y/N"
         answer = gets.chomp
         if answer == "Y"
             clear
@@ -58,7 +58,7 @@ class Cli
     end
     
     def checkout_sundae
-        puts "Thanks for your order #{@user}!"
+        puts "Thanks for your order #{@user['name']}!"
         puts "So for your ice cream flavors, we have: #{@chosen_flavors.join(", ")}"
         puts "For your toppings, we have: #{@chosen_toppings.join(", ")}"
         puts "Is that correct? Y/N"
@@ -75,20 +75,23 @@ class Cli
         end
     end
 
-    def create_customer
-        Customer.create(name: @user)
-    end
+    # def create_customer
+    #     Customer.create(name: @user)
+    # end
 
-    def get_customer_id
-        @customer_id = Customer.find_by(name: @user).id
-    end
+    # def get_customer_id
+    #     @customer_id = Customer.find_by(@user['name']).id
+    # end
 
     def create_sundae
-       @sundae_id = Sundae.create(ice_cream: @chosen_flavors, topping: @chosen_toppings).id
+       @current_sundae = Sundae.create(ice_cream: @chosen_flavors, topping: @chosen_toppings)
     end
 
+    # def create_sundae_id
+    #     @current_sundae_id = Sundae.create(ice_cream: @chosen_flavors, topping: @chosen_toppings).id
+    #  end
+
     def create_purchase
-        purchase = Purchase.create(sundae_id: @sundae_id, customer_id: @customer_id)
-        binding.pry
+        Purchase.create(sundae_id: @current_sundae.id, customer_id: @user.id) 
     end
 end
